@@ -1,8 +1,13 @@
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
+const cors = require("cors");
 
 const app = express();
+// Middleware to process req before recieving
+app.use(express.json());
+// Middleware to avoid cors error
+app.use(cors());
 const base_url = "https://rategain.com/blog";
 
 async function scrapeBlogData() {
