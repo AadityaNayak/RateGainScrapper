@@ -36,7 +36,6 @@ async function scrapeBlogData() {
   let pageNum = 1;
 
   while (true) {
-    console.log(pageNum);
     let url = `${base_url}/page/${pageNum}/`;
     if (pageNum === 1) url = base_url;
 
@@ -112,7 +111,6 @@ async function scrapePageData(pageNum) {
       blogDetails.title = titleElement.text().trim();
 
       const dateElement = root(element).find("div.bd-item span");
-      console.log(dateElement.text());
       blogDetails.date = dateElement.text().trim();
       blogDetails.date = extractAndFormatDate(blogDetails.date);
 
