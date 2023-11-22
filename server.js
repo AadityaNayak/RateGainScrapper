@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 // Middleware to avoid cors error
 app.use(cors());
+
 const base_url = "https://rategain.com/blog";
 
 function extractAndFormatDate(text) {
