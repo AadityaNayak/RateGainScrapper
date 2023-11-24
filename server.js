@@ -9,7 +9,7 @@ app.use(express.json());
 // Middleware to avoid cors error
 app.use(cors());
 
-const base_url = "https://rateain.com/blog";
+const base_url = "https://rategain.com/blog";
 
 function extractAndFormatDate(text) {
   // Regular expression to match date in "Month DD, YYYY" format
