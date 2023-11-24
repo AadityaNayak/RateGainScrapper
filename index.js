@@ -60,6 +60,9 @@ async function scrapeBlogData() {
         const titleElement = root(element).find("h6");
         blogDetails.title = titleElement.text().trim();
 
+        const titleLink = root(element).find("h6 a").attr('href');
+        blogDetails.link = titleLink.text.trim();
+
         const dateElement = root(element).find("div.bd-item span");
         blogDetails.date = dateElement.text().trim();
         blogDetails.date = extractAndFormatDate(blogDetails.date);
@@ -76,6 +79,7 @@ async function scrapeBlogData() {
           "blog date": blogDetails.date,
           "image URL": blogDetails.imageUrl,
           "likes count": blogDetails.likes,
+          "link": blogDetails.link,
         });
       });
 
@@ -111,6 +115,9 @@ async function scrapePageData(pageNum) {
       const titleElement = root(element).find("h6");
       blogDetails.title = titleElement.text().trim();
 
+      const titleLink = root(element).find("h6 a").attr('href');
+      blogDetails.link = titleLink.text.trim();
+
       const dateElement = root(element).find("div.bd-item span");
       blogDetails.date = dateElement.text().trim();
       blogDetails.date = extractAndFormatDate(blogDetails.date);
@@ -128,6 +135,7 @@ async function scrapePageData(pageNum) {
         "blog date": blogDetails.date,
         "image URL": blogDetails.imageUrl,
         "likes count": blogDetails.likes,
+        "link": blogDetails.link,
       });
     });
   }
