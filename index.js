@@ -116,6 +116,7 @@ async function scrapePageData(pageNum) {
       blogDetails.title = titleElement.text().trim();
 
       const titleLink = root(element).find("h6 a").attr('href');
+      console.log(titleLink)
       blogDetails.link = titleLink.text.trim();
 
       const dateElement = root(element).find("div.bd-item span");
