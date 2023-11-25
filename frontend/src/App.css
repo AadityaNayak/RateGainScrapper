@@ -1,0 +1,256 @@
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body{
+  /* background-image: url("../public/images/bi.jpg"); */
+  background-color: #effafd;
+}
+
+a{
+  text-decoration: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-family: 'Arial', sans-serif;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.banner-heading{
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: rgb(145, 222, 135);
+  width: 100%;
+  color: black;
+  text-align: center;
+  transition: all;
+  animation: gradientTransition 5s infinite alternate;
+}
+
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(36, 100%, 65%);
+  z-index: -1;
+  transition: transform 1s ease;
+}
+
+@keyframes gradientTransition {
+  0% {  
+    
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.button-container {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px; /* Adjusted margin for spacing */
+}
+
+.input-field {
+  border: 2px solid #4CAF50;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 200px;
+  margin: 10px;
+}
+
+.btn {
+  background-color: #894caf;
+  width: 90%;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.5s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: rgb(41, 178, 48);
+  color: white;
+  font-weight: bold;
+}
+
+.loading {
+  font-size: 20px;
+  color: #4CAF50;
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  margin: 10px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+
+.data-display {
+  
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 600px;
+  border: 2px dashed #4b8de0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+/* Styling for WebKit browsers (Chrome, Safari) */
+.data-display::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+.data-display::-webkit-scrollbar-thumb {
+  background-color: #4CAF50; /* Set the color of the scrollbar thumb */
+}
+
+.data-display::-webkit-scrollbar-track {
+  background-color: #f3f3f3; /* Set the color of the scrollbar track */
+}
+
+.data-item {
+  border-radius: 1rem;
+  background-color: rgba(248, 246, 246, 0.595);
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  width: 30%;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.data-item a{
+  border-radius: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.data-item img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+
+.CSVLink {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+@media (max-width: 1200px) {
+  .data-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-item {
+    width: 100%;
+  }
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 10px;
+  font-style: italic;
+  
+}
+
+.footer h4 {
+  color: rgb(68, 201, 194);
+  margin-bottom: 10px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.footer-about{
+  text-align: left;
+}
+
+footer li {
+  font-size:1.1rem;
+  display: flex;
+  width: 100%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+footer a {
+  margin: 5px;
+  display: inline-block;
+  font-weight: 500;
+  color: yellow;
+}
+
+footer a:hover{
+  color: rgb(33, 199, 0);
+}
+
+.copyright {
+  font-weight: 500;
+  font-size: 12px;
+}
