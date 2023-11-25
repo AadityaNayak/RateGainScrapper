@@ -116,7 +116,8 @@ async function scrapePageData(pageNum) {
       blogDetails.title = titleElement.text().trim();
 
       const titleLink = root(element).find("h6 a").attr('href');
-      blogDetails.link = titleLink.text
+
+      blogDetails.link = titleLink
 
       const dateElement = root(element).find("div.bd-item span");
       blogDetails.date = dateElement.text().trim();
@@ -139,6 +140,8 @@ async function scrapePageData(pageNum) {
       });
     });
   }
+
+  // console.log(blogData)
 
   return blogData;
 }
